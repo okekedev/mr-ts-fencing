@@ -579,9 +579,16 @@ section { padding: 4rem 1.25rem; }
    ============================================= */
 .financing-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   margin-top: 2rem;
+  justify-items: center;
+}
+@media (max-width: 800px) {
+  .financing-steps { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .financing-steps { grid-template-columns: 1fr; }
 }
 .step {
   text-align: center;
@@ -589,6 +596,7 @@ section { padding: 4rem 1.25rem; }
   background: var(--white);
   border-radius: var(--radius);
   border: 1.5px solid var(--gray-light);
+  width: 100%;
 }
 .step-number {
   width: 44px; height: 44px;
