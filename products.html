@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop mattresses and adjustable bases at Shallow the Bed Store in Wichita Falls, TX. Beautyrest Black and Baselogic with financing available.">
+  <title>Products | Shallow the Bed Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .shop-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      background: var(--white);
+      border: 1.5px solid var(--gray-light);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      position: sticky;
+      top: 84px;
+    }
+    .sidebar-section { margin-bottom: 1.75rem; }
+    .sidebar-section:last-child { margin-bottom: 0; }
+    .sidebar-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gray-text);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    .filter-option {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.35rem 0;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--dark);
+      user-select: none;
+    }
+    .filter-option input[type="checkbox"] {
+      accent-color: var(--orange);
+      width: 16px; height: 16px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .filter-count {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--gray-text);
+      background: var(--gray-light);
+      padding: 0.1rem 0.45rem;
+      border-radius: 10px;
+    }
+    .collapsible-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+    }
+    .collapsible-title:hover { color: var(--orange); }
+    .collapse-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    .collapsible-title.collapsed .collapse-icon { transform: rotate(-90deg); }
+    .collapsible-body {
+      overflow: hidden;
+      transition: max-height 0.25s ease, opacity 0.25s ease;
+      max-height: 200px;
+      opacity: 1;
+    }
+    .collapsible-body.collapsed { max-height: 0; opacity: 0; }
+
+    .clear-filters {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--orange);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      margin-top: 1rem;
+      text-decoration: underline;
+    }
+    .clear-filters.visible { display: block; }
+
+    /* MOBILE FILTER TOGGLE */
+    .filter-toggle-bar {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--white);
+      border: 1.5px solid var(--gray-light);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .filter-toggle-bar svg { width: 18px; height: 18px; fill: var(--dark); }
+
+    /* RESULTS HEADER */
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .results-count { font-size: 0.875rem; color: var(--gray-text); }
+
+    /* PRODUCT CARD GRID */
+    .product-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .product-card-grid .card { cursor: pointer; }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--gray-text);
+    }
+    .no-results h3 { color: var(--dark); margin-bottom: 0.5rem; }
+
+    @media (max-width: 768px) {
+      .shop-layout { grid-template-columns: 1fr; }
+      .filter-toggle-bar { display: flex; }
+      .sidebar {
+        display: none;
+        position: static;
+        margin-bottom: 1rem;
+      }
+      .sidebar.open { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Shallow the Bed Store" class="logo-img">
+        <span class="logo-name">Shallow the Bed Store</span>
+        <span class="logo-sub">Wichita Falls, TX</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="financing.html">Financing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      <a href="tel:9406926671" class="nav-phone">(940) 692-6671</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <section>
+    <div class="section-inner">
+
+      <!-- MOBILE FILTER TOGGLE -->
+      <div class="filter-toggle-bar" id="filterToggle">
+        <span>Filter Products</span>
+        <svg viewBox="0 0 24 24"><path d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39A.998.998 0 0 0 18.95 4H5.04a1 1 0 0 0-.79 1.61z"/></svg>
+      </div>
+
+      <div class="shop-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+          <div class="sidebar-section">
+            <div class="sidebar-title collapsible-title collapsed" data-target="filter-category">
+              Category
+              <svg class="collapse-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+            </div>
+            <div class="collapsible-body collapsed" id="filter-category">
+              <label class="filter-option">
+                <input type="checkbox" data-filter="category" value="mattresses" checked>
+                Mattresses <span class="filter-count">4</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" data-filter="category" value="adjustable-bases" checked>
+                Adjustable Bases <span class="filter-count">1</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <div class="sidebar-title collapsible-title collapsed" data-target="filter-brand">
+              Brand
+              <svg class="collapse-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+            </div>
+            <div class="collapsible-body collapsed" id="filter-brand">
+              <label class="filter-option">
+                <input type="checkbox" data-filter="brand" value="Beautyrest" checked>
+                Beautyrest <span class="filter-count">4</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" data-filter="brand" value="Baselogic" checked>
+                Baselogic <span class="filter-count">1</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <div class="sidebar-title collapsible-title collapsed" data-target="filter-bestfor">
+              Best For
+              <svg class="collapse-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+            </div>
+            <div class="collapsible-body collapsed" id="filter-bestfor">
+              <label class="filter-option">
+                <input type="checkbox" data-filter="bestFor" value="Side Sleepers" checked>
+                Side Sleepers <span class="filter-count">1</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" data-filter="bestFor" value="All Sleepers" checked>
+                All Sleepers <span class="filter-count">4</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <div class="sidebar-title collapsible-title collapsed" data-target="filter-size">
+              Size
+              <svg class="collapse-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+            </div>
+            <div class="collapsible-body collapsed" id="filter-size">
+              <label class="filter-option">
+                <input type="checkbox" data-filter="sizes" value="Twin" checked>
+                Twin
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" data-filter="sizes" value="Twin XL" checked>
+                Twin XL
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" data-filter="sizes" value="Full" checked>
+                Full
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" data-filter="sizes" value="Queen" checked>
+                Queen
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" data-filter="sizes" value="King" checked>
+                King
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" data-filter="sizes" value="California King" checked>
+                California King
+              </label>
+            </div>
+          </div>
+
+          <button class="clear-filters" id="clearFilters">Clear all filters</button>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <div>
+          <div class="results-header">
+            <span class="results-count" id="resultsCount">Showing 5 products</span>
+          </div>
+          <div class="product-card-grid" id="productGrid"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+
+  <!-- NAV CARDS STRIP -->
+  <div class="nav-cards-strip">
+    <div class="nav-cards-row">
+      <a href="about.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">About Us</div>
+          <div class="nav-card-sub">Family-owned since 1980</div>
+        </div>
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </a>
+      <a href="financing.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">Financing</div>
+          <div class="nav-card-sub">Flexible payment options in-store</div>
+        </div>
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </a>
+      <a href="contact.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">Contact Us</div>
+          <div class="nav-card-sub">3513 McNiel Ave, Wichita Falls</div>
+        </div>
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-name">Shallow the Bed Store</span>
+        <p style="margin-top:0.75rem;font-size:0.82rem;color:var(--gray-mid);line-height:1.7;">3513 McNiel Ave<br>Wichita Falls, TX 76308</p>
+        <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--gray-mid);">Mon&ndash;Sat &nbsp;10am&ndash;6pm</p>
+        <p style="margin-top:0.25rem;font-size:0.82rem;color:var(--gray-mid);">Sun &nbsp;Closed</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="products.html">All Products</a>
+        <a href="products.html?category=mattresses">Mattresses</a>
+        <a href="products.html?category=adjustable-bases">Adjustable Bases</a>
+        <a href="financing.html">Financing</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.facebook.com/ThebedstoreWf" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div>
+        <h4>More</h4>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Shallow the Bed Store. All rights reserved. &nbsp;&middot;&nbsp; Website by Lonestar Intel</span>
+    </div>
+  </footer>
+
+  <script>
+    let allProducts = [];
+
+    // Render a product card
+    function renderCard(p) {
+      const sizePills = (p.sizes || []).map(s => `<span class="size-pill">${s}</span>`).join('');
+      return `
+        <div class="card" onclick="window.location='product.html?id=${p.id}'">
+          <img class="card-img" src="${p.image}" alt="${p.name}" loading="lazy">
+          <div class="card-body">
+            <span class="card-badge">${p.category === 'mattresses' ? 'Mattress' : 'Adjustable Base'}</span>
+            <h3>${p.name}</h3>
+            <p>${p.tagline}</p>
+            ${sizePills ? `<details class="size-dropdown" onclick="event.stopPropagation()"><summary>Sizes</summary><div class="size-pills">${sizePills}</div></details>` : ''}
+            <a href="product.html?id=${p.id}" class="btn btn-primary" onclick="event.stopPropagation()">View Details</a>
+          </div>
+        </div>`;
+    }
+
+    function getActiveFilters() {
+      const filters = { category: [], brand: [], bestFor: [], sizes: [] };
+      document.querySelectorAll('input[data-filter]:checked').forEach(cb => {
+        filters[cb.dataset.filter].push(cb.value);
+      });
+      return filters;
+    }
+
+    function applyFilters() {
+      const f = getActiveFilters();
+      const filtered = allProducts.filter(p =>
+        (f.category.length === 0 || f.category.includes(p.category)) &&
+        (f.brand.length === 0 || f.brand.includes(p.brand)) &&
+        (f.bestFor.length === 0 || f.bestFor.includes(p.bestFor)) &&
+        (f.sizes.length === 0 || !p.sizes || f.sizes.some(s => p.sizes.includes(s)))
+      );
+
+      const grid = document.getElementById('productGrid');
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="no-results"><h3>No products match your filters</h3><p>Try adjusting or clearing your filters.</p></div>';
+      } else {
+        grid.innerHTML = filtered.map(renderCard).join('');
+      }
+
+      document.getElementById('resultsCount').textContent =
+        `Showing ${filtered.length} product${filtered.length !== 1 ? 's' : ''}`;
+
+      // Show/hide clear button if any filter is unchecked
+      const anyUnchecked = [...document.querySelectorAll('input[data-filter]')].some(cb => !cb.checked);
+      document.getElementById('clearFilters').classList.toggle('visible', anyUnchecked);
+    }
+
+    // Load products and init
+    fetch('data/products.json')
+      .then(r => r.json())
+      .then(data => {
+        allProducts = data;
+
+        // Check for ?category= in URL and pre-filter
+        const params = new URLSearchParams(window.location.search);
+        const cat = params.get('category');
+        if (cat) {
+          document.querySelectorAll('input[data-filter="category"]').forEach(cb => {
+            cb.checked = cb.value === cat;
+          });
+        }
+
+        applyFilters();
+
+        // Filter change listeners
+        document.querySelectorAll('input[data-filter]').forEach(cb => {
+          cb.addEventListener('change', applyFilters);
+        });
+
+        // Clear filters
+        document.getElementById('clearFilters').addEventListener('click', () => {
+          document.querySelectorAll('input[data-filter]').forEach(cb => cb.checked = true);
+          applyFilters();
+        });
+      });
+
+    // Collapsible sidebar sections
+    document.querySelectorAll('.collapsible-title').forEach(title => {
+      title.addEventListener('click', () => {
+        const body = document.getElementById(title.dataset.target);
+        title.classList.toggle('collapsed');
+        body.classList.toggle('collapsed');
+      });
+    });
+
+    // Mobile filter toggle
+    document.getElementById('filterToggle').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+
+    // Nav active state + mobile toggle
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a').forEach(a => {
+      if (a.getAttribute('href') === path) a.classList.add('active');
+    });
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('mainNav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

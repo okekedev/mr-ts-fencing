@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Baselogic Platinum Adjustable Base at Shallow the Bed Store in Wichita Falls, TX. Zero-gravity, massage, sound therapy, 20-year warranty.">
+  <title>Adjustable Bases | Shallow the Bed Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Shallow the Bed Store" class="logo-img">
+        <span class="logo-name">Shallow the Bed Store</span>
+        <span class="logo-sub">Wichita Falls, TX</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="financing.html">Financing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      <a href="tel:9406926671" class="nav-phone">(940) 692-6671</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <h1>Adjustable Bases</h1>
+    <p>Your perfect position — for sleep, rest, and everything in between.</p>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &rsaquo; Adjustable Bases
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <div class="product-grid" id="bases-detail"></div>
+    </div>
+  </section>
+
+  <!-- SECOND IMAGE -->
+  <section class="bg-off">
+    <div class="section-inner">
+      <div class="info-grid" style="align-items:center;">
+        <div>
+          <h2>Built for Real Life</h2>
+          <p style="margin:1rem 0;">Whether you're watching TV, reading, dealing with back pain, or just want a better night's sleep — the Baselogic Platinum adapts to you. Folds flat for easy moving and storage.</p>
+          <a href="contact.html" class="btn btn-primary">Ask Us About It</a>
+        </div>
+        <div>
+          <img src="images/base-2.webp" alt="Baselogic adjustable base in use" style="border-radius:var(--radius);box-shadow:var(--shadow);width:100%;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <h2>Pair It with a Beautyrest Black</h2>
+    <p>Every Beautyrest Black mattress is fully compatible with the Baselogic Platinum base.</p>
+    <div class="btn-group">
+      <a href="mattresses.html" class="btn btn-outline">Shop Mattresses</a>
+      <a href="financing.html" class="btn btn-outline">See Financing</a>
+    </div>
+  </section>
+
+
+  <!-- NAV CARDS STRIP -->
+  <div class="nav-cards-strip">
+    <div class="nav-cards-row">
+      <a href="products.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">Products</div>
+          <div class="nav-card-sub">Mattresses, bases, and furniture</div>
+        </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-name">Shallow the Bed Store</span>
+        <p style="margin-top:0.75rem;font-size:0.82rem;color:var(--gray-mid);line-height:1.7;">3513 McNiel Ave<br>Wichita Falls, TX 76308</p>
+        <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--gray-mid);">Mon&ndash;Sat &nbsp;10am&ndash;6pm</p>
+        <p style="margin-top:0.25rem;font-size:0.82rem;color:var(--gray-mid);">Sun &nbsp;Closed</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="mattresses.html">Mattresses</a>
+        <a href="adjustable-bases.html">Adjustable Bases</a>
+        <a href="financing.html">Financing</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.facebook.com/ThebedstoreWf" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div>
+        <h4>More</h4>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Shallow the Bed Store. All rights reserved. &nbsp;&middot;&nbsp; Website by Lonestar Intel</span>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script>
+    loadProducts('data/bases.json', 'bases-detail', renderBase);
+  </script>
+</body>
+</html>

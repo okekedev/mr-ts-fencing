@@ -1,0 +1,25 @@
+[
+  {
+    "id": "baselogic-platinum",
+    "name": "Baselogic Platinum Adjustable Base",
+    "tagline": "Your perfect position, every night",
+    "image": "images/base-1.webp",
+    "warranty": "20-Year Warranty",
+    "compatible": "Compatible with all Beautyrest mattresses",
+    "sizes": ["Twin XL", "Full", "Queen", "King", "California King"],
+    "features": [
+      "Head, neck & foot adjustability",
+      "Wireless LCD remote control",
+      "Dual whisper-quiet massage",
+      "Automatic pillow tilt",
+      "Zero-gravity preset",
+      "Anti-snore preset",
+      "Memory position preset",
+      "Integrated sound therapy (white, pink & brown noise)",
+      "3 ambient underbed light settings",
+      "USB-A & USB-C charging ports",
+      "Foldable for easy moving & storage"
+    ],
+    "description": "The Baselogic Platinum transforms your bed into a fully personalized sleep system. Raise, lower, and fine-tune your position with a wireless remote — then let the built-in massage and sound therapy do the rest."
+  }
+]

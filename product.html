@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product details — Shallow the Bed Store, Wichita Falls TX">
+  <title>Product | Shallow the Bed Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── PRODUCT LAYOUT ── */
+    .product-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ── GALLERY ── */
+    .gallery {
+      position: sticky;
+      top: 84px;
+    }
+    .gallery-main {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--gray-light);
+      margin-bottom: 0.75rem;
+      position: relative;
+      aspect-ratio: 4/3;
+    }
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.25s ease;
+    }
+    /* Prev / Next arrows */
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(28,26,24,0.55);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 38px; height: 38px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.2s;
+    }
+    .gallery-arrow:hover { background: var(--orange); }
+    .gallery-arrow svg { width: 18px; height: 18px; fill: #fff; }
+    .gallery-arrow.prev { left: 10px; }
+    .gallery-arrow.next { right: 10px; }
+
+    /* Dot indicator */
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 0.75rem;
+    }
+    .gallery-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gray-mid);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+    }
+    .gallery-dot.active {
+      background: var(--orange);
+      transform: scale(1.3);
+    }
+
+    /* Thumbnails */
+    .gallery-thumbs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .gallery-thumb {
+      width: 68px; height: 68px;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.2s;
+      flex-shrink: 0;
+    }
+    .gallery-thumb.active { border-color: var(--orange); }
+    .gallery-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── PRODUCT INFO ── */
+    .product-detail-info { padding: 0.25rem 0; }
+    .product-category-link {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--orange);
+    }
+    .product-category-link:hover { text-decoration: underline; }
+    .product-detail-info h1 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      margin: 0.4rem 0 0.2rem;
+    }
+    .product-tagline {
+      font-size: 1rem;
+      color: var(--gray-text);
+      margin-bottom: 1.25rem;
+    }
+    .product-description {
+      font-size: 0.92rem;
+      color: var(--gray-text);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    .features-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--dark);
+    }
+    .features-list li::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--orange);
+      flex-shrink: 0;
+    }
+    .detail-grid {
+      display: grid;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+    .detail-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 0.75rem;
+      padding: 0.7rem 0.9rem;
+      background: var(--off-white);
+      border-radius: 8px;
+      font-size: 0.86rem;
+    }
+    .detail-label { font-weight: 700; color: var(--dark); }
+    .detail-value { color: var(--gray-text); }
+    .product-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .product-actions .btn { text-align: center; }
+    .financing-note {
+      font-size: 0.78rem;
+      color: var(--gray-text);
+      text-align: center;
+    }
+    .financing-note a { color: var(--orange); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 720px) {
+      .product-detail-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+      .gallery { position: static; }
+      .gallery-thumb { width: 56px; height: 56px; }
+      .detail-row { grid-template-columns: 1fr; gap: 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Shallow the Bed Store" class="logo-img">
+        <span class="logo-name">Shallow the Bed Store</span>
+        <span class="logo-sub">Wichita Falls, TX</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="financing.html">Financing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      <a href="tel:9406926671" class="nav-phone">(940) 692-6671</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &rsaquo;
+    <a href="products.html">Products</a> &rsaquo;
+    <span id="breadcrumb-name">...</span>
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <div class="product-detail-layout">
+
+        <!-- GALLERY (left) -->
+        <div class="gallery" id="gallery">
+          <div class="gallery-main">
+            <img id="galleryMain" src="" alt="">
+            <button class="gallery-arrow prev" id="prevBtn" aria-label="Previous image">
+              <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button class="gallery-arrow next" id="nextBtn" aria-label="Next image">
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+          </div>
+          <div class="gallery-dots" id="galleryDots"></div>
+          <div class="gallery-thumbs" id="galleryThumbs"></div>
+        </div>
+
+        <!-- PRODUCT INFO (right) -->
+        <div class="product-detail-info" id="productInfo">
+          <!-- Loaded by JS -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="bg-off" id="relatedSection">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>You May Also Like</h2>
+      </div>
+      <div class="card-grid" id="relatedGrid"></div>
+    </div>
+  </section>
+
+
+
+  <!-- NAV CARDS STRIP -->
+  <div class="nav-cards-strip">
+    <div class="nav-cards-row">
+      <a href="products.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">Products</div>
+          <div class="nav-card-sub">Mattresses, bases, and furniture</div>
+        </div>
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </a>
+      <a href="financing.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">Financing</div>
+          <div class="nav-card-sub">Flexible payment options in-store</div>
+        </div>
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </a>
+      <a href="contact.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">Contact Us</div>
+          <div class="nav-card-sub">3513 McNiel Ave, Wichita Falls</div>
+        </div>
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-name">Shallow the Bed Store</span>
+        <p style="margin-top:0.75rem;font-size:0.82rem;color:var(--gray-mid);line-height:1.7;">3513 McNiel Ave<br>Wichita Falls, TX 76308</p>
+        <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--gray-mid);">Mon&ndash;Sat &nbsp;10am&ndash;6pm</p>
+        <p style="margin-top:0.25rem;font-size:0.82rem;color:var(--gray-mid);">Sun &nbsp;Closed</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="products.html">All Products</a>
+        <a href="products.html?category=mattresses">Mattresses</a>
+        <a href="products.html?category=adjustable-bases">Adjustable Bases</a>
+        <a href="financing.html">Financing</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.facebook.com/ThebedstoreWf" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div>
+        <h4>More</h4>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Shallow the Bed Store. All rights reserved. &nbsp;&middot;&nbsp; Website by Lonestar Intel</span>
+    </div>
+  </footer>
+
+  <script>
+    // ── GALLERY ──
+    let currentIndex = 0;
+    let images = [];
+
+    function setActive(index) {
+      currentIndex = (index + images.length) % images.length;
+      const mainImg = document.getElementById('galleryMain');
+      mainImg.style.opacity = '0';
+      setTimeout(() => {
+        mainImg.src = images[currentIndex];
+        mainImg.style.opacity = '1';
+      }, 150);
+
+      document.querySelectorAll('.gallery-thumb').forEach((t, i) =>
+        t.classList.toggle('active', i === currentIndex));
+      document.querySelectorAll('.gallery-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === currentIndex));
+    }
+
+    function buildGallery(imgs, altText) {
+      images = imgs;
+      const mainImg = document.getElementById('galleryMain');
+      mainImg.src = imgs[0];
+      mainImg.alt = altText;
+
+      const thumbs = document.getElementById('galleryThumbs');
+      const dots = document.getElementById('galleryDots');
+
+      thumbs.innerHTML = imgs.map((src, i) => `
+        <div class="gallery-thumb ${i === 0 ? 'active' : ''}" data-index="${i}">
+          <img src="${src}" alt="${altText} view ${i + 1}" loading="lazy">
+        </div>`).join('');
+
+      dots.innerHTML = imgs.map((_, i) => `
+        <button class="gallery-dot ${i === 0 ? 'active' : ''}" data-index="${i}" aria-label="View image ${i + 1}"></button>`).join('');
+
+      thumbs.querySelectorAll('.gallery-thumb').forEach(t =>
+        t.addEventListener('click', () => setActive(+t.dataset.index)));
+      dots.querySelectorAll('.gallery-dot').forEach(d =>
+        d.addEventListener('click', () => setActive(+d.dataset.index)));
+
+      document.getElementById('prevBtn').addEventListener('click', () => setActive(currentIndex - 1));
+      document.getElementById('nextBtn').addEventListener('click', () => setActive(currentIndex + 1));
+
+      // Hide arrows if only 1 image
+      if (imgs.length <= 1) {
+        document.getElementById('prevBtn').style.display = 'none';
+        document.getElementById('nextBtn').style.display = 'none';
+        dots.style.display = 'none';
+      }
+
+      // Keyboard navigation
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') setActive(currentIndex - 1);
+        if (e.key === 'ArrowRight') setActive(currentIndex + 1);
+      });
+    }
+
+    // ── LOAD PRODUCT ──
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+
+    fetch('data/products.json')
+      .then(r => r.json())
+      .then(products => {
+        const p = products.find(x => x.id === productId);
+        if (!p) {
+          document.getElementById('productInfo').innerHTML =
+            '<p>Product not found. <a href="products.html">Back to Products</a></p>';
+          document.getElementById('gallery').style.display = 'none';
+          return;
+        }
+
+        document.title = `${p.name} | Shallow the Bed Store`;
+        document.querySelector('meta[name="description"]').setAttribute('content',
+          `${p.name} — ${p.tagline}. Available at Shallow the Bed Store in Wichita Falls, TX.`);
+        document.getElementById('breadcrumb-name').textContent = p.name;
+
+        // Build gallery
+        buildGallery(p.images || [p.image], p.name);
+
+        // Category
+        const catLabel = p.category === 'mattresses' ? 'Mattresses' : 'Adjustable Bases';
+        const catUrl = `products.html?category=${p.category}`;
+
+        // Features
+        const featureItems = p.features.map(f => `<li>${f}</li>`).join('');
+
+        // Detail rows
+        const detailRows = Object.entries(p.details).map(([k, v]) => `
+          <div class="detail-row">
+            <span class="detail-label">${k}</span>
+            <span class="detail-value">${v}</span>
+          </div>`).join('');
+
+        document.getElementById('productInfo').innerHTML = `
+          <a href="${catUrl}" class="product-category-link">${catLabel}</a>
+          <h1>${p.name}</h1>
+          <p class="product-tagline">${p.tagline}</p>
+          <p class="product-description">${p.description}</p>
+          <ul class="features-list">${featureItems}</ul>
+          <div class="detail-grid">${detailRows}</div>
+          <div class="product-actions">
+            <a href="tel:9406926671" class="btn btn-primary">Call for Pricing</a>
+          </div>`;
+
+        // Related products
+        const related = products.filter(x => x.id !== p.id && x.category === p.category).slice(0, 3);
+        if (related.length) {
+          document.getElementById('relatedGrid').innerHTML = related.map(r => `
+            <div class="card" onclick="window.location='product.html?id=${r.id}'" style="cursor:pointer;">
+              <img class="card-img" src="${r.image}" alt="${r.name}" loading="lazy">
+              <div class="card-body">
+                <span class="card-badge">${catLabel}</span>
+                <h3>${r.name}</h3>
+                <p>${r.tagline}</p>
+                <a href="product.html?id=${r.id}" class="btn btn-primary" onclick="event.stopPropagation()">View Details</a>
+              </div>
+            </div>`).join('');
+        } else {
+          document.getElementById('relatedSection').style.display = 'none';
+        }
+      });
+
+    // Nav
+    document.getElementById('navToggle').addEventListener('click', () =>
+      document.getElementById('mainNav').classList.toggle('open'));
+    document.querySelectorAll('nav a').forEach(a => {
+      if (a.getAttribute('href') === 'products.html') a.classList.add('active');
+    });
+  </script>
+</body>
+</html>

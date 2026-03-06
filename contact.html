@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Shallow the Bed Store in Wichita Falls, TX. Call (940) 692-6671 or visit us at 3513 McNiel Ave. Open Mon-Sat 10am-6pm.">
+  <title>Contact | Shallow the Bed Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-form { display: grid; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--dark); }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 0.7rem 1rem;
+      border: 1.5px solid var(--gray-mid);
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-family: var(--font);
+      color: var(--dark);
+      background: var(--white);
+      transition: border-color var(--transition);
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--orange);
+    }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Shallow the Bed Store" class="logo-img">
+        <span class="logo-name">Shallow the Bed Store</span>
+        <span class="logo-sub">Wichita Falls, TX</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="financing.html">Financing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      <a href="tel:9406926671" class="nav-phone">(940) 692-6671</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &rsaquo; Contact
+  </div>
+
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 1rem;
+    }
+    .contact-phone   { grid-column: 2; grid-row: 1; }
+    .contact-address { grid-column: 1; grid-row: 1; }
+    .contact-hours   { grid-column: 1; grid-row: 2 / 4; }
+    .contact-follow  { grid-column: 2; grid-row: 2; }
+    .contact-map     { grid-column: 2; grid-row: 3; }
+    @media (max-width: 700px) {
+      .contact-grid { grid-template-columns: 1fr; grid-template-rows: unset; }
+      .contact-phone   { grid-column: 1; grid-row: 1; }
+      .contact-address { grid-column: 1; grid-row: 2; }
+      .contact-hours   { grid-column: 1; grid-row: 3; }
+      .contact-follow  { grid-column: 1; grid-row: 4; }
+      .contact-map     { grid-column: 1; grid-row: 5; }
+    }
+  </style>
+
+  <section>
+    <div class="section-inner">
+      <div class="contact-grid">
+
+        <div class="info-block contact-phone">
+          <h3>Phone</h3>
+          <a href="tel:9406926671" style="font-size:1.3rem;font-weight:700;color:var(--orange);">(940) 692-6671</a>
+        </div>
+
+        <div class="info-block contact-address">
+          <h3>Address</h3>
+          <p>3513 McNiel Ave<br>Wichita Falls, TX 76308</p>
+          <a href="https://maps.google.com/?q=3513+McNiel+Ave+Wichita+Falls+TX+76308" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.75rem;color:var(--orange);font-size:0.875rem;font-weight:600;">Get Directions &rarr;</a>
+        </div>
+
+        <div class="info-block contact-hours">
+          <h3>Store Hours</h3>
+          <div class="hours-row"><span>Monday</span><span>10:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span>Tuesday</span><span>10:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span>Wednesday</span><span>10:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span>Thursday</span><span>10:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span>Friday</span><span>10:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span>Saturday</span><span>10:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span>Sunday</span><span style="color:var(--gray-text);">Closed</span></div>
+        </div>
+
+        <div class="info-block contact-follow">
+          <h3>Follow Us</h3>
+          <a href="https://www.facebook.com/ThebedstoreWf" target="_blank" rel="noopener" style="color:var(--orange);font-weight:600;">Facebook &rarr;</a>
+        </div>
+
+        <div class="contact-map map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.0!2d-98.52!3d33.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864db24c9bf0f7b1%3A0x1!2s3513+McNiel+Ave%2C+Wichita+Falls%2C+TX+76308!5e0!3m2!1sen!2sus!4v1"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Shallow the Bed Store location">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- NAV CARDS STRIP -->
+  <div class="nav-cards-strip">
+    <div class="nav-cards-row">
+      <a href="products.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">Products</div>
+          <div class="nav-card-sub">Mattresses, bases, and furniture</div>
+        </div>
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </a>
+      <a href="financing.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">Financing</div>
+          <div class="nav-card-sub">Flexible payment options in-store</div>
+        </div>
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </a>
+      <a href="about.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">About Us</div>
+          <div class="nav-card-sub">Family-owned since 1980</div>
+        </div>
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-name">Shallow the Bed Store</span>
+        <p style="margin-top:0.75rem;font-size:0.82rem;color:var(--gray-mid);line-height:1.7;">3513 McNiel Ave<br>Wichita Falls, TX 76308</p>
+        <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--gray-mid);">Mon&ndash;Sat &nbsp;10am&ndash;6pm</p>
+        <p style="margin-top:0.25rem;font-size:0.82rem;color:var(--gray-mid);">Sun &nbsp;Closed</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="mattresses.html">Mattresses</a>
+        <a href="adjustable-bases.html">Adjustable Bases</a>
+        <a href="financing.html">Financing</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.facebook.com/ThebedstoreWf" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div>
+        <h4>More</h4>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Shallow the Bed Store. All rights reserved. &nbsp;&middot;&nbsp; Website by Lonestar Intel</span>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script>
+    function handleForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type=submit]');
+      btn.textContent = 'Message Sent!';
+      btn.style.background = '#4a7c59';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

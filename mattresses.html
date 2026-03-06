@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop Beautyrest Black mattresses at Shallow the Bed Store in Wichita Falls, TX. Series 1–4 with financing available.">
+  <title>Mattresses | Shallow the Bed Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      padding: 0.45rem 1rem;
+      border: 1.5px solid var(--gray-mid);
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--white);
+      color: var(--dark);
+      transition: all var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: var(--white);
+    }
+    .results-count {
+      font-size: 0.85rem;
+      color: var(--gray-text);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Shallow the Bed Store" class="logo-img">
+        <span class="logo-name">Shallow the Bed Store</span>
+        <span class="logo-sub">Wichita Falls, TX</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="financing.html">Financing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      <a href="tel:9406926671" class="nav-phone">(940) 692-6671</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <h1>Mattresses</h1>
+    <p>Beautyrest Black — four levels of luxury, built to last.</p>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &rsaquo; Mattresses
+  </div>
+
+  <section>
+    <div class="section-inner">
+
+      <!-- FILTER BAR -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="side">Best for Side Sleepers</button>
+        <button class="filter-btn" data-filter="all-sleepers">Best for All Sleepers</button>
+      </div>
+      <p class="results-count" id="results-count"></p>
+
+      <!-- PRODUCT GRID -->
+      <div class="product-grid" id="mattress-detail"></div>
+    </div>
+  </section>
+
+  <!-- COMPARE SECTION -->
+  <section class="bg-off">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Which Series Is Right for You?</h2>
+        <p>Here's a quick way to think about it.</p>
+      </div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+          <thead>
+            <tr style="background:var(--dark);color:var(--white);">
+              <th style="padding:0.9rem 1rem;text-align:left;">Feature</th>
+              <th style="padding:0.9rem 1rem;text-align:center;">Series 1</th>
+              <th style="padding:0.9rem 1rem;text-align:center;">Series 2</th>
+              <th style="padding:0.9rem 1rem;text-align:center;">Series 3</th>
+              <th style="padding:0.9rem 1rem;text-align:center;">Series 4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--gray-light);">
+              <td style="padding:0.8rem 1rem;font-weight:600;">Pocketed Coils</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">Triple-Strand</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">Triple-Strand</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">Triple-Strand + 2K Nano</td>
+              <td style="padding:0.8rem 1rem;text-align:center;color:var(--orange);font-weight:600;">Triple-Strand + 4K Nano</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--gray-light);background:var(--off-white);">
+              <td style="padding:0.8rem 1rem;font-weight:600;">Latex Layer</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">&mdash;</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">&mdash;</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">Self-Response Latex</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">Self-Response Latex</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--gray-light);">
+              <td style="padding:0.8rem 1rem;font-weight:600;">Sleep Climate Tech</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">Yes</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">Yes</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">Yes</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">Yes</td>
+            </tr>
+            <tr style="background:var(--off-white);">
+              <td style="padding:0.8rem 1rem;font-weight:600;">Best For</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">Side Sleepers</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">All Sleepers</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">All Sleepers</td>
+              <td style="padding:0.8rem 1rem;text-align:center;">All Sleepers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <h2>Not Sure? Come Try Them.</h2>
+    <p>Our team will help you find the right fit — no pressure, no sales tactics.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn btn-outline">Visit the Store</a>
+      <a href="financing.html" class="btn btn-outline">See Financing Options</a>
+    </div>
+  </section>
+
+
+  <!-- NAV CARDS STRIP -->
+  <div class="nav-cards-strip">
+    <div class="nav-cards-row">
+      <a href="products.html" class="nav-card">
+        <div>
+          <div class="nav-card-title">Products</div>
+          <div class="nav-card-sub">Mattresses, bases, and furniture</div>
+        </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-name">Shallow the Bed Store</span>
+        <p style="margin-top:0.75rem;font-size:0.82rem;color:var(--gray-mid);line-height:1.7;">3513 McNiel Ave<br>Wichita Falls, TX 76308</p>
+        <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--gray-mid);">Mon&ndash;Sat &nbsp;10am&ndash;6pm</p>
+        <p style="margin-top:0.25rem;font-size:0.82rem;color:var(--gray-mid);">Sun &nbsp;Closed</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="mattresses.html">Mattresses</a>
+        <a href="adjustable-bases.html">Adjustable Bases</a>
+        <a href="financing.html">Financing</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.facebook.com/ThebedstoreWf" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div>
+        <h4>More</h4>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Shallow the Bed Store. All rights reserved. &nbsp;&middot;&nbsp; Website by Lonestar Intel</span>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script>
+    loadProducts('data/mattresses.json', 'mattress-detail', renderMattress).then(() => {
+      const cards = document.querySelectorAll('.product-card');
+      const countEl = document.getElementById('results-count');
+      countEl.textContent = `Showing ${cards.length} mattresses`;
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          let visible = 0;
+          cards.forEach(card => {
+            const badge = card.querySelector('.card-badge')?.textContent?.toLowerCase() || '';
+            if (filter === 'all' || badge.includes(filter.replace('-', ' '))) {
+              card.style.display = '';
+              visible++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+          countEl.textContent = `Showing ${visible} mattress${visible !== 1 ? 'es' : ''}`;
+        });
+      });
+
+      // Scroll to anchor if present
+      const hash = window.location.hash;
+      if (hash) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    });
+  </script>
+</body>
+</html>

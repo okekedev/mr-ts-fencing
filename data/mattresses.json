@@ -1,0 +1,62 @@
+[
+  {
+    "id": "br-series-1",
+    "name": "Beautyrest Black Series 1",
+    "tagline": "Luxury support built for side sleepers",
+    "bestFor": "Side sleepers",
+    "image": "images/series-1.webp",
+    "sizes": ["Twin", "Twin XL", "Full", "Queen", "King", "California King"],
+    "features": [
+      "Triple-Stranded Pocketed Coil Technology",
+      "Beautyrest Gel Memory Foam",
+      "Sleep Climate Technology",
+      "Advanced motion separation"
+    ],
+    "description": "Where luxury meets innovation. The Series 1 delivers individualized support, all-night heat transfer, and contouring pressure relief for a truly restful sleep."
+  },
+  {
+    "id": "br-series-2",
+    "name": "Beautyrest Black Series 2",
+    "tagline": "Instant pressure relief for all sleep styles",
+    "bestFor": "All sleepers",
+    "image": "images/series-2.webp",
+    "sizes": ["Twin", "Twin XL", "Full", "Queen", "King", "California King"],
+    "features": [
+      "Triple-Stranded Pocketed Coil Technology",
+      "SurfaceTouch Gel Memory Foam",
+      "Micro Diamond Memory Foam",
+      "Sleep Climate Technology"
+    ],
+    "description": "SurfaceTouch Gel Memory Foam quilted directly into the surface delivers instant pressure relief the moment you lie down."
+  },
+  {
+    "id": "br-series-3",
+    "name": "Beautyrest Black Series 3",
+    "tagline": "Responsive comfort with latex precision",
+    "bestFor": "All sleepers",
+    "image": "images/series-3.webp",
+    "sizes": ["Twin", "Twin XL", "Full", "Queen", "King", "California King"],
+    "features": [
+      "Triple-Stranded Pocketed Coil + 2K Nano Coils",
+      "Self-Response Latex",
+      "SurfaceTouch Gel Memory Foam",
+      "Sleep Climate Technology"
+    ],
+    "description": "Self-Response Latex and 2K Nano Coils in the pillow top deliver enhanced, individualized support with responsive pressure relief for all sleep positions."
+  },
+  {
+    "id": "br-series-4",
+    "name": "Beautyrest Black Series 4",
+    "tagline": "Our most premium sleep experience",
+    "bestFor": "All sleepers",
+    "image": "images/series-4.webp",
+    "sizes": ["Twin", "Twin XL", "Full", "Queen", "King", "California King"],
+    "features": [
+      "Triple-Stranded Pocketed Coil + 4K Nano Coils",
+      "Self-Response Latex",
+      "SurfaceTouch Gel Memory Foam",
+      "Sleep Climate Technology"
+    ],
+    "description": "The pinnacle of the Beautyrest Black line. 4K Nano Coils provide our most premium individualized support for an unmatched sleep experience."
+  }
+]

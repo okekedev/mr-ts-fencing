@@ -1,0 +1,158 @@
+[
+  {
+    "id": "br-series-1",
+    "name": "Beautyrest Black Series 1",
+    "category": "mattresses",
+    "brand": "Beautyrest",
+    "tagline": "Luxury support built for side sleepers",
+    "bestFor": "Side Sleepers",
+    "sizes": ["Twin", "Twin XL", "Full", "Queen", "King", "California King"],
+    "image": "images/series-1-1.webp",
+    "images": [
+      "images/series-1-1.webp",
+      "images/series-1-2.webp",
+      "images/series-1-3.webp",
+      "images/series-1-4.webp"
+    ],
+    "features": [
+      "Triple-Stranded Pocketed Coil Technology",
+      "Beautyrest Gel Memory Foam",
+      "Sleep Climate Technology",
+      "Advanced motion separation"
+    ],
+    "description": "Where luxury meets innovation. The Series 1 delivers individualized support, all-night heat transfer, and contouring pressure relief for a truly restful sleep.",
+    "details": {
+      "Support": "Triple-Stranded Pocketed Coil Technology offers lasting, individualized support",
+      "Pressure Relief": "Beautyrest Gel Memory Foam contours to your body for exceptional pressure relief",
+      "Temperature": "Sleep Climate Technology helps transfer heat away from the body all night",
+      "Motion Separation": "Triple-Stranded Pocketed Coil Technology offers advanced motion separation for an undisturbed rest"
+    }
+  },
+  {
+    "id": "br-series-2",
+    "name": "Beautyrest Black Series 2",
+    "category": "mattresses",
+    "brand": "Beautyrest",
+    "tagline": "Instant pressure relief for all sleep styles",
+    "bestFor": "All Sleepers",
+    "sizes": ["Twin", "Twin XL", "Full", "Queen", "King", "California King"],
+    "image": "images/series-2-1.webp",
+    "images": [
+      "images/series-2-1.webp",
+      "images/series-2-2.webp",
+      "images/series-2-3.webp",
+      "images/series-2-4.webp",
+      "images/series-2-5.webp"
+    ],
+    "features": [
+      "Triple-Stranded Pocketed Coil Technology",
+      "SurfaceTouch Gel Memory Foam",
+      "Micro Diamond Memory Foam",
+      "Sleep Climate Technology"
+    ],
+    "description": "SurfaceTouch Gel Memory Foam quilted directly into the surface delivers instant pressure relief the moment you lie down.",
+    "details": {
+      "Support": "Triple-Stranded Pocketed Coil Technology offers lasting, individualized support",
+      "Pressure Relief": "SurfaceTouch Gel Memory Foam is quilted directly into the mattress surface for instant pressure relief",
+      "Temperature": "Sleep Climate Technology and Micro Diamond Memory Foam help transfer heat away from the body",
+      "Motion Separation": "Triple-Stranded Pocketed Coil Technology offers advanced motion separation for an undisturbed rest"
+    }
+  },
+  {
+    "id": "br-series-3",
+    "name": "Beautyrest Black Series 3",
+    "category": "mattresses",
+    "brand": "Beautyrest",
+    "tagline": "Responsive comfort with latex precision",
+    "bestFor": "All Sleepers",
+    "sizes": ["Twin", "Twin XL", "Full", "Queen", "King", "California King"],
+    "image": "images/series-3-1.webp",
+    "images": [
+      "images/series-3-1.webp",
+      "images/series-3-2.webp",
+      "images/series-3-3.webp",
+      "images/series-3-4.webp",
+      "images/series-3-5.webp",
+      "images/series-3-6.webp"
+    ],
+    "features": [
+      "Triple-Stranded Pocketed Coil + 2K Nano Coils",
+      "Self-Response Latex",
+      "SurfaceTouch Gel Memory Foam",
+      "Sleep Climate Technology"
+    ],
+    "description": "Self-Response Latex and 2K Nano Coils in the pillow top deliver enhanced, individualized support with responsive pressure relief for all sleep positions.",
+    "details": {
+      "Support": "Triple-Stranded Pocketed Coil Technology plus 2K Nano Coils in Pillow Top models offer enhanced, individualized support",
+      "Pressure Relief": "Self-Response Latex and SurfaceTouch Gel Memory Foam conform to your body for responsive pressure relief",
+      "Temperature": "Sleep Climate Technology and Micro Diamond Memory Foam help transfer heat away from the body",
+      "Motion Separation": "Triple-Stranded Pocketed Coil Technology offers advanced motion separation for an undisturbed rest"
+    }
+  },
+  {
+    "id": "br-series-4",
+    "name": "Beautyrest Black Series 4",
+    "category": "mattresses",
+    "brand": "Beautyrest",
+    "tagline": "Our most premium sleep experience",
+    "bestFor": "All Sleepers",
+    "sizes": ["Twin", "Twin XL", "Full", "Queen", "King", "California King"],
+    "image": "images/series-4-7.webp",
+    "images": [
+      "images/series-4-1.webp",
+      "images/series-4-2.webp",
+      "images/series-4-3.webp",
+      "images/series-4-4.webp",
+      "images/series-4-5.webp",
+      "images/series-4-6.webp",
+      "images/series-4-7.webp",
+      "images/series-4-8.webp"
+    ],
+    "features": [
+      "Triple-Stranded Pocketed Coil + 4K Nano Coils",
+      "Self-Response Latex",
+      "SurfaceTouch Gel Memory Foam",
+      "Sleep Climate Technology"
+    ],
+    "description": "The pinnacle of the Beautyrest Black line. 4K Nano Coils provide our most premium individualized support for an unmatched sleep experience.",
+    "details": {
+      "Support": "Triple-Stranded Pocketed Coil Technology and 4K Nano Coils offer our most premium individualized support",
+      "Pressure Relief": "Self-Response Latex and SurfaceTouch Gel Memory Foam conform to your body for responsive pressure relief",
+      "Temperature": "Sleep Climate Technology and Micro Diamond Memory Foam help transfer heat away from the body",
+      "Motion Separation": "Triple-Stranded Pocketed Coil Technology offers advanced motion separation for an undisturbed rest"
+    }
+  },
+  {
+    "id": "baselogic-platinum",
+    "name": "Baselogic Platinum Adjustable Base",
+    "category": "adjustable-bases",
+    "brand": "Baselogic",
+    "tagline": "Your perfect position, every night",
+    "bestFor": "All Sleepers",
+    "sizes": ["Twin XL", "Full", "Queen", "King", "California King"],
+    "image": "images/base-1.webp",
+    "images": [
+      "images/base-1.webp",
+      "images/base-2.webp",
+      "images/base-3.webp",
+      "images/base-4.webp"
+    ],
+    "features": [
+      "Head, neck & foot adjustability",
+      "Wireless LCD remote control",
+      "Dual whisper-quiet massage",
+      "Zero-gravity & anti-snore presets",
+      "Integrated sound therapy",
+      "USB-A & USB-C charging ports",
+      "20-year warranty"
+    ],
+    "description": "The Baselogic Platinum transforms your bed into a fully personalized sleep system. Raise, lower, and fine-tune your position with a wireless remote — then let the built-in massage and sound therapy do the rest.",
+    "details": {
+      "Comfort": "Head, foot, and neck adjustability — raise or lower into the ideal sleep or lounge position",
+      "Relaxation": "Dual whisper-quiet massage settings to help you drift to sleep",
+      "Sound": "Integrated sound therapy — select white, pink, or brown noise for a soothing experience",
+      "Convenience": "USB-A & C charging ports, memory preset, foldable for easy moving and storage",
+      "Warranty": "20-year warranty — compatible with all Beautyrest mattresses"
+    }
+  }
+]
