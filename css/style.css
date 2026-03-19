@@ -261,6 +261,14 @@ section { padding: 4rem 1.25rem; }
   transition: transform var(--transition), box-shadow var(--transition);
 }
 .service-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(31,18,9,0.13); }
+.service-card-img {
+  width: calc(100% + 2.5rem);
+  margin: -1.25rem -1.25rem 1.25rem;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+  display: block;
+}
 .service-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
